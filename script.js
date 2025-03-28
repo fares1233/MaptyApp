@@ -303,7 +303,10 @@ class App {
   _getLocalStorage() {
     const data = JSON.parse(localStorage.getItem('workouts'));
 
-    if (!data) return;
+    if (!data) {
+      delAll.classList.add('form__row--hidden');
+      return;
+    }
 
     this.#workouts = data;
 
@@ -316,7 +319,6 @@ class App {
 
 
   reset() {
-    delAll.classList.add('form__row--hidden');
     localStorage.removeItem('workouts');
     location.reload();
   }
