@@ -121,7 +121,7 @@ class App {
     const allInOne = [];
     this.#workouts.forEach(work => allInOne.push(work.coords));
     var bounds = L.latLngBounds(allInOne);
-    this.#map.fitBounds(bounds, { padding: [50, 50] });
+    this.#map.fitBounds(bounds, { padding: [30, 30] });
   }
 
   _showForm(mapE) {
